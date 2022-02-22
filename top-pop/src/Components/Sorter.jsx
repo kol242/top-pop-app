@@ -12,9 +12,9 @@ const Sorter = observer(() => {
   return (
     <select defaultValue={'default'} onChange={sortType} name="sorter" id="sorter">
         <option value="default" disabled>Sort...</option>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-        <option value="rank">By rank</option>
+        <option value="asc">Ascending by duration</option>
+        <option value="desc">Descending by duration</option>
+        <option value="rank">Descending by rank</option>
     </select>
   )
 })

@@ -14,20 +14,24 @@
         justify-content: center;
         align-items: center;
         background-color: #fefefe;
-        margin: 10% auto;
+        margin: 18% auto;
         padding: 20px;
-        border: 1px solid #888;
+        border: none;
         width: auto;
         max-width: 20%;
         border-radius: 10px;
-        .modal-text {
-            text-align: center;
+        h4,
+        p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            align-self: flex-start;
         }
         .close {
             color: #aaa;
             float: right;
             font-size: 20px;
             font-weight: bold;
+            align-self: flex-end;
             &:hover,
             &:focus {
                 color: black;

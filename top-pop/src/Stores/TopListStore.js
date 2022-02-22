@@ -19,13 +19,14 @@ class TopListStore {
     timeFormater = (time) => {
         const minutes = Math.floor(time / 60)
         let seconds = time - minutes * 60
-        return `0${minutes}:${seconds < 10 ? '0' + seconds : seconds}`
+        return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`
     }
 
     getSongs = async () => {
         await axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart`)
         .then(res => {
             const data = res.data
+            console.log(data.tracks.data)
             this.songs = data.tracks.data.map(song => {
                 return {
                     id: song.id,
@@ -33,7 +34,7 @@ class TopListStore {
                     artist: song.artist.name,
                     duration: song.duration,
                     time: this.timeFormater(song.duration),
-                    cover: song.album.cover,
+                    cover: song.album.cover_big,
                     position: song.position,
                     preview: song.preview
                 }

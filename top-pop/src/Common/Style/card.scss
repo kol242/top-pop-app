@@ -1,0 +1,43 @@
+@import 'variables';
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+    list-style-type: none;
+    background-color: #f2f2f277;
+    overflow-wrap: break-word;
+    width: 310px;
+    cursor: pointer;
+    &:hover {
+        background-color: #f2f2f2d7;
+    }
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 5px;
+            padding: 10px 10px;
+            font-size: 18px;
+        }
+        img {
+            width: 280px;
+            height: 280px;
+            border-radius: 10px;
+        }
+        audio {
+            margin: 10px 0;
+        }
+        audio::-webkit-media-controls-panel {
+            background: #f2f2f277;
+        }
+    }
+}
