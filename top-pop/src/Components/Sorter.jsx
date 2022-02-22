@@ -14,7 +14,7 @@ const Sorter = observer(() => {
         <option value="default" disabled>Sort...</option>
         <option value="asc">Ascending by duration</option>
         <option value="desc">Descending by duration</option>
-        <option value="rank">Descending by rank</option>
+        <option value="rank">Ascending by rank</option>
     </select>
   )
 })
