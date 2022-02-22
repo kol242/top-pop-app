@@ -6,6 +6,7 @@ class TopListStore {
     modalChecker = false
     alert = false
     selectedSong = []
+    spinner = false
 
     constructor(){
         makeAutoObservable(this)
@@ -26,6 +27,7 @@ class TopListStore {
     getSongs = async () => {
         try {
             this.alert = false
+            this.spinner = true
             await axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart`)
             .then(res => {
                 const data = res.data
@@ -43,6 +45,7 @@ class TopListStore {
                     }
                 })
             }) 
+            this.spinner = false
         } catch {
             this.alert = true
         }

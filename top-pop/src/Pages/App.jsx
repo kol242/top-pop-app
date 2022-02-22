@@ -8,6 +8,7 @@ import '../Common/Style/app.scss'
 import { FaDeezer } from 'react-icons/fa'
 import Footer from '../Components/Footer'
 import Alert from '../Components/Alert'
+import Spinner from '../Components/Spinner'
 
 const App = observer(() => {
   return (
@@ -18,7 +19,7 @@ const App = observer(() => {
             <p>Top 10 songs on Deezer music platform.</p>
             <Sorter />
             { TopListStore.alert ? <Alert /> : null }
-            <List />
+            { TopListStore.spinner ? <Spinner /> : <List /> }
           {TopListStore.modalChecker ? <Modal /> : null }    
         </div>
       </div> 
