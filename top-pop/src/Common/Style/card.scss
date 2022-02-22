@@ -10,34 +10,41 @@
     box-shadow: $box-shadow;
     list-style-type: none;
     background-color: #f2f2f277;
-    overflow-wrap: break-word;
-    width: 310px;
+    width: auto;
     cursor: pointer;
+    transition: all .2s ease-in-out;
     &:hover {
-        background-color: #f2f2f2d7;
+        transform: scale(1.04);
     }
     .card-content {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        p {
-            text-align: center;
-            margin-top: 0;
-            margin-bottom: 5px;
-            padding: 10px 10px;
-            font-size: 18px;
-        }
+        overflow-wrap: break-word;
+        gap: 15px;
         img {
-            width: 280px;
-            height: 280px;
+            width: 150px;
+            height: 150px;
             border-radius: 10px;
         }
-        audio {
-            margin: 10px 0;
-        }
-        audio::-webkit-media-controls-panel {
-            background: #f2f2f277;
+        .content-info {
+            display: flex;
+            flex-direction: column;
+            overflow-wrap: break-word;
+            max-width: 300px;
+            p {
+                text-align: left;
+                margin: 0;
+                padding: 10px 10px;
+                font-size: 16px;
+            }
+            audio {
+                margin-top: 50px;
+            }
+            audio::-webkit-media-controls-panel {
+                background: #f2f2f277;
+            }
         }
     }
 }

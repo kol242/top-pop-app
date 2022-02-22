@@ -4,6 +4,7 @@ import axios from 'axios'
 class TopListStore {
     songs = []
     modalChecker = false
+    alert = false
     selectedSong = []
 
     constructor(){
@@ -23,23 +24,29 @@ class TopListStore {
     }
 
     getSongs = async () => {
-        await axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart`)
-        .then(res => {
-            const data = res.data
-            console.log(data.tracks.data)
-            this.songs = data.tracks.data.map(song => {
-                return {
-                    id: song.id,
-                    title: song.title,
-                    artist: song.artist.name,
-                    duration: song.duration,
-                    time: this.timeFormater(song.duration),
-                    cover: song.album.cover_big,
-                    position: song.position,
-                    preview: song.preview
-                }
-            })
-        })
+        try {
+            this.alert = false
+            await axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart`)
+            .then(res => {
+                const data = res.data
+                console.log(data.tracks.data)
+                this.songs = data.tracks.data.map(song => {
+                    return {
+                        id: song.id,
+                        title: song.title,
+                        artist: song.artist.name,
+                        duration: song.duration,
+                        time: this.timeFormater(song.duration),
+                        cover: song.album.cover_big,
+                        position: song.position,
+                        preview: song.preview
+                    }
+                })
+            }) 
+        } catch {
+            this.alert = true
+        }
+        
     }
 
     sorter = (type) => {

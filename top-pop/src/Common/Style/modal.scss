@@ -14,7 +14,7 @@
         justify-content: center;
         align-items: center;
         background-color: #fefefe;
-        margin: 18% auto;
+        margin: 15% auto;
         padding: 20px;
         border: none;
         width: auto;
@@ -26,18 +26,37 @@
             margin-bottom: 10px;
             align-self: flex-start;
         }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 20px;
-            font-weight: bold;
-            align-self: flex-end;
-            &:hover,
-            &:focus {
-                color: black;
-                text-decoration: none;
-                cursor: pointer;
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-self: flex-start;
+        }
+        .header {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            #title {
+                font-size: 20px;
             }
+            .close {
+                color: #aaa;
+                font-size: 25px;
+                font-weight: bold;
+                &:hover,
+                &:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+        hr {
+            width: 100%;
+            border: 0;
+            margin-bottom: 20px;
+            height: 1px;
+            background: #333;
+            background-image: linear-gradient(to right, #ccc, #333, #ccc);
         }
     }
 }

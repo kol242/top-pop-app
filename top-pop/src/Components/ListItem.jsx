@@ -7,11 +7,15 @@ const ListItem = observer(({ item }) => {
   return (
     <ul onClick={() => TopListStore.modal(item)} className="card" key={item.id}>
         <div className="card-content">
-        <p>{item.title}</p>
-        <img src={item.cover} alt="cover" />
-        <audio controls>
-            <source src={item.preview} type="audio/mpeg"/>
-        </audio>
+          <div>
+            <img src={item.cover} alt="cover" />
+          </div>
+        <div className="content-info">
+          <p>{item.title}</p>
+          <audio controls>
+              <source src={item.preview} type="audio/mpeg"/>
+          </audio>  
+        </div>
         </div>
     </ul>
   )
