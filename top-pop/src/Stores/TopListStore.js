@@ -31,7 +31,6 @@ class TopListStore {
             await axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart`)
             .then(res => {
                 const data = res.data
-                console.log(data.tracks.data)
                 this.songs = data.tracks.data.map(song => {
                     return {
                         id: song.id,

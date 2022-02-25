@@ -3,17 +3,17 @@ import React from 'react'
 import TopListStore from '../Stores/TopListStore'
 import '../Common/Style/card.scss'
 
-const ListItem = observer(({ item }) => {
+const ListItem = observer(({ song }) => {
   return (
-    <ul onClick={() => TopListStore.modal(item)} className="card" key={item.id}>
+    <ul onClick={() => TopListStore.modal(song)} className="card" key={song.id}>
         <div className="card-content">
           <div>
-            <img src={item.cover} alt="cover" />
+            <img src={song.cover} alt="cover" />
           </div>
         <div className="content-info">
-          <p>{item.title}</p>
+          <p>{song.title}</p>
           <audio controls>
-              <source src={item.preview} type="audio/mpeg"/>
+              <source src={song.preview} type="audio/mpeg"/>
           </audio>  
         </div>
         </div>

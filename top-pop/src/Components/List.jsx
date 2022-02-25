@@ -7,7 +7,7 @@ const List = observer(() => {
   return (
     <div>
         {TopListStore.songs.map((song) => (
-            <ListItem item={song} />
+            <ListItem key={song.id} song={song} />
         ))}
     </div>
   )
